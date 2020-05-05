@@ -2,20 +2,16 @@ package cn.xpbootcamp.refactor;
 
 public class Movie {
 
-    static final int CAMPUS = 2;
-    static final int HISTORY = 0;
-    static final int NEW_RELEASE = 1;
-
     private String title;
-    private int priceCode;
+    private MovieType type;
 
-    Movie(String title, int priceCode) {
+    Movie(String title, MovieType type) {
         this.title = title;
-        this.priceCode = priceCode;
+        this.type = type;
     }
 
-    int getPriceCode() {
-        return priceCode;
+    MovieType getType() {
+        return type;
     }
 
     String getTitle() {

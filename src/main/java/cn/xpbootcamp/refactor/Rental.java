@@ -3,19 +3,26 @@ package cn.xpbootcamp.refactor;
 public class Rental {
 
     private Movie movie;
-    private int daysRented;
+    private int tenancy;
 
-    Rental(Movie movie, int daysRented) {
+    Rental(Movie movie, int tenancy) {
         this.movie = movie;
-        this.daysRented = daysRented;
+        this.tenancy = tenancy;
     }
 
     Movie getMovie() {
         return movie;
     }
 
-    int getDaysRented() {
-        return daysRented;
+    int getTenancy() {
+        return tenancy;
     }
 
+    public int getRenterPoint() {
+        return this.getMovie().getType().calculateRenterPoint(this.getTenancy());
+    }
+
+    public double getCost() {
+        return this.getMovie().getType().calculateCost(this.getTenancy());
+    }
 }
